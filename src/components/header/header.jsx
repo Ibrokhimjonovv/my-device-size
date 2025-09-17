@@ -1,0 +1,83 @@
+import React, { useState } from 'react';
+import "./header.scss"
+import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+
+const Header = () => {
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(!show);
+
+    // Logo animatsiya variantlari
+    const container = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
+    const item = {
+        hidden: { y: -50, opacity: 0 },
+        visible: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } },
+    };
+
+    // Logo text qismlarga bo‘linadi
+    const firstWord = "My";
+    const secondPart = "Device size";
+
+    return (
+        <div id='header'>
+            <div className="logo">
+                <Link to="/">
+                    <motion.div
+                        className="logo-text"
+                        variants={container}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {/* My */}
+                        {firstWord.split("").map((char, index) => (
+                            <motion.span key={index} variants={item}>
+                                {char}
+                            </motion.span>
+                        ))}
+
+                        {/* Favicon rasmi */}
+                        <motion.img
+                            src='/favicon.png'
+                            alt="favicon"
+                            variants={item}
+                            style={{margin: "0 5px" }}
+                        />
+
+                        {/* Device size */}
+                        {secondPart.split("").map((char, index) => (
+                            <motion.span key={index} variants={item}>
+                                {char === " " ? "\u00A0" : char}
+                            </motion.span>
+                        ))}
+                    </motion.div>
+                </Link>
+            </div>
+
+            <button
+                type='button'
+                className={show ? "active" : ""}
+                onClick={handleShow}
+            >
+                <ion-icon name="grid-outline"></ion-icon>
+            </button>
+
+            <div className={`my-menu ${show ? "active" : ""}`}>
+                <nav>
+                    <Link to="/units-of-measurement" onClick={handleShow}>Units Of Measurement</Link>
+                    <Link to="/all-devices-size" onClick={handleShow}>All Devices Size</Link>
+                </nav>
+            </div>
+        </div>
+    )
+}
+
+export default Header;
