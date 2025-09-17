@@ -539,7 +539,7 @@ const Devices = () => {
                 <input
                     type="text"
                     id='ser'
-                    placeholder="Qurilma nomini yozing..."
+                    placeholder="Write the name of your device..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
