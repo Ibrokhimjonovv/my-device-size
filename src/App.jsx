@@ -5,6 +5,7 @@ import NotFound from './page/not-found/not-found';
 import Header from './components/header/header';
 import UnitsOfMeasurement from './page/units-of-measurement/units-of-measurement';
 import Devices from './page/all-devices/devices';
+import About from './page/about/about';
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/units-of-measurement" element={<UnitsOfMeasurement />}/>
         <Route path="/all-devices-size" element={<Devices />}/>
+        <Route path='/about' element={<About />}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
