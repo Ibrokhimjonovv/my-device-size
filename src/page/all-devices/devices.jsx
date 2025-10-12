@@ -1,4 +1,4 @@
-import React, { useState } from 'react';;
+import React, { useState, useEffect } from "react";
 import "./devices.scss";
 
 const devices = [
@@ -515,85 +515,163 @@ const devices = [
 ]
 
 const Devices = () => {
+  const [search, setSearch] = useState("");
 
-    const [search, setSearch] = useState("");
+  useEffect(() => {
+    document.title = "Device Viewport Sizes & Screen Resolution List | м17";
 
-    // qidiruvni filtrlaymiz
-    const filteredDevices = devices.filter((device) =>
-        device.name.toLowerCase().includes(search.toLowerCase())
-    );
+    const metaTags = [
+      { name: "title", content: "Device Viewport Sizes & Screen Resolution List | м17" },
+      {
+        name: "description",
+        content:
+          "Explore a complete list of device viewport sizes, resolutions, screen sizes, and pixel ratios. Compare phones, tablets, and watches easily — powered by м17.",
+      },
+      {
+        name: "keywords",
+        content:
+          "device viewport sizes, phone resolution list, screen size chart, device pixel ratio, density ppi, css ppi, responsive design, device comparison, м17",
+      },
+      { name: "author", content: "м17" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://my-device-size.vercel.app/all-devices-size" },
+      { property: "og:site_name", content: "My Device Size | м17" },
+      { property: "og:title", content: "Device Viewport Sizes & Screen Resolution List" },
+      {
+        property: "og:description",
+        content:
+          "Check and compare viewport, resolution, and screen sizes for phones, tablets, and other devices. Accurate device display data by м17.",
+      },
+      { property: "og:image", content: "https://my-device-size.vercel.app/preview-image.png" },
+      { property: "twitter:card", content: "summary_large_image" },
+      { property: "twitter:url", content: "https://my-device-size.vercel.app/all-devices-size" },
+      { property: "twitter:title", content: "Device Viewport Sizes & Screen Resolution List | м17" },
+      {
+        property: "twitter:description",
+        content:
+          "Browse viewport and screen resolution details for all popular devices. Perfect for responsive web design and comparison — powered by м17.",
+      },
+      { property: "twitter:image", content: "https://my-device-size.vercel.app/preview-image.png" },
+    ];
 
-    return (
-        <div id='devices-container'>
-            <div className="text-cont">
-                <div className="texts">
-                    <p className='small-colored'>What is Viewport?</p>
-                    <h1>Viewport Size for Devices</h1>
-                    <p className='no-longer-text'>Now a days Smart Phones have very High Display Resolution, A small 6-inch device have same display dimensions which a 32-inch LCD have, How it is possible?</p>
-                    <p className='longer-text'>Device Dimensions which is also known as resolution is based upon Pixel Per Inch. The devices which have higher resolution in small display, their ONE pixel contains many more pixels, thats why Retina Display or Device Dimensions got bigger. However device actual dimensions depends on actual Pixels Per Inch which is called "Viewport Size" of device or "device-width". Responsive Websites CSS styles are based upon Viewport sizes of devices. Below is a detailed comparison list of Viewport Size for devices, Phone Dimensions, Screen Sizes and Devices Resolution:</p>
-                </div>
-                <div className="devices-ad"></div>
-            </div>
-            <label htmlFor="ser">Find any device viewport size</label>
-            <div className="search">
-                <input
-                    type="text"
-                    id='ser'
-                    placeholder="Write the name of your device..."
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-            </div>
-            <div className="table-scroller">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Type</th>
-                            <th>Name</th>
-                            <th>Viewport size</th>
-                            <th>Device Resolution</th>
-                            <th>Screen Size</th>
-                            <th>Pixel Ratio</th>
-                            <th>Density PPI</th>
-                            <th>CSS PPI</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filteredDevices.length > 0 ? (
-                            filteredDevices.map((device, indx) => (
-                                <tr key={indx}>
-                                    <td className="type">
-                                        {device.type === "Phone" ? (
-                                            <i className="bi bi-phone"></i>
-                                        ) : device.type === "Tablet" ? (
-                                            <i className="bi bi-tablet"></i>
-                                        ) : device.type === "Watch" ? (
-                                            <i className="bi bi-smartwatch"></i>
-                                        ) : (
-                                            ""
-                                        )}
-                                    </td>
-                                    <td className="font-b">{device.name}</td>
-                                    <td className="color-">{device.viewport}</td>
-                                    <td>{device.resolution}</td>
-                                    <td>{device.screen_size}</td>
-                                    <td>{device.pixel_ratio}</td>
-                                    <td>{device.density_ppi}</td>
-                                    <td>{device.css_ppi}</td>
-                                </tr>
-                            ))
-                        ) : (
-                            <tr>
-                                <td colSpan="8" style={{ textAlign: "center" }}>
-                                    Device not found 😕
-                                </td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </div>
+    // Remove previous meta tags to avoid duplication
+    const prevTags = document.querySelectorAll("meta[data-dynamic-meta]");
+    prevTags.forEach((tag) => tag.remove());
+
+    // Add new meta tags dynamically
+    metaTags.forEach((tagData) => {
+      const meta = document.createElement("meta");
+      Object.entries(tagData).forEach(([key, value]) => meta.setAttribute(key, value));
+      meta.setAttribute("data-dynamic-meta", "true");
+      document.head.appendChild(meta);
+    });
+
+    // Canonical link
+    const canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    canonical.setAttribute("href", "https://my-device-size.vercel.app/all-devices-size");
+    canonical.setAttribute("data-dynamic-meta", "true");
+    document.head.appendChild(canonical);
+
+    // Theme color
+    const theme = document.createElement("meta");
+    theme.setAttribute("name", "theme-color");
+    theme.setAttribute("content", "#0ea5e9");
+    theme.setAttribute("data-dynamic-meta", "true");
+    document.head.appendChild(theme);
+  }, []);
+
+  // filtering
+  const filteredDevices = devices.filter((device) =>
+    device.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <div id="devices-container">
+      <div className="text-cont">
+        <div className="texts">
+          <p className="small-colored">What is Viewport?</p>
+          <h1>Viewport Size for Devices</h1>
+          <p className="no-longer-text">
+            Now a days Smart Phones have very High Display Resolution, A small
+            6-inch device have same display dimensions which a 32-inch LCD have,
+            How it is possible?
+          </p>
+          <p className="longer-text">
+            Device Dimensions which is also known as resolution is based upon
+            Pixel Per Inch. The devices which have higher resolution in small
+            display, their ONE pixel contains many more pixels, thats why Retina
+            Display or Device Dimensions got bigger. However device actual
+            dimensions depends on actual Pixels Per Inch which is called
+            "Viewport Size" of device or "device-width". Responsive Websites CSS
+            styles are based upon Viewport sizes of devices. Below is a detailed
+            comparison list of Viewport Size for devices, Phone Dimensions,
+            Screen Sizes and Devices Resolution:
+          </p>
         </div>
-    )
-}
+        <div className="devices-ad"></div>
+      </div>
+      <label htmlFor="ser">Find any device viewport size</label>
+      <div className="search">
+        <input
+          type="text"
+          id="ser"
+          placeholder="Write the name of your device..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+      <div className="table-scroller">
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Viewport size</th>
+              <th>Device Resolution</th>
+              <th>Screen Size</th>
+              <th>Pixel Ratio</th>
+              <th>Density PPI</th>
+              <th>CSS PPI</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredDevices.length > 0 ? (
+              filteredDevices.map((device, indx) => (
+                <tr key={indx}>
+                  <td className="type">
+                    {device.type === "Phone" ? (
+                      <i className="bi bi-phone"></i>
+                    ) : device.type === "Tablet" ? (
+                      <i className="bi bi-tablet"></i>
+                    ) : device.type === "Watch" ? (
+                      <i className="bi bi-smartwatch"></i>
+                    ) : (
+                      ""
+                    )}
+                  </td>
+                  <td className="font-b">{device.name}</td>
+                  <td className="color-">{device.viewport}</td>
+                  <td>{device.resolution}</td>
+                  <td>{device.screen_size}</td>
+                  <td>{device.pixel_ratio}</td>
+                  <td>{device.density_ppi}</td>
+                  <td>{device.css_ppi}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="8" style={{ textAlign: "center" }}>
+                  Device not found 😕
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
 
-export default Devices
+export default Devices;
