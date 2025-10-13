@@ -117,7 +117,7 @@ const IpChecker = () => {
             }
 
             // IP ma'lumotlarini olish (IPv4 orqali)
-            const ipInfoResponse = await fetch(`http://ip-api.com/json/${userIpv4}`);
+            const ipInfoResponse = await fetch(`https://ip-api.com/json/${userIpv4}`);
             const ipInfoResult = await ipInfoResponse.json();
 
             if (ipInfoResult.status === 'success') {

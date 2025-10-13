@@ -100,7 +100,7 @@ const IpDetail = () => {
     const fetchIpDetails = async (ipAddress) => {
         try {
             setLoading(true)
-            const response = await fetch(`http://ip-api.com/json/${ipAddress}`)
+            const response = await fetch(`https://ip-api.com/json/${ipAddress}`)
             const data = await response.json()
 
             if (data.status === 'success') {
