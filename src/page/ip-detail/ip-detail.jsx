@@ -99,22 +99,40 @@ const IpDetail = () => {
 
     const fetchIpDetails = async (ipAddress) => {
         try {
-            setLoading(true)
-            const response = await fetch(`https://ip-api.com/json/${ipAddress}`)
-            const data = await response.json()
+            setLoading(true);
+            setError(null);
 
-            if (data.status === 'success') {
-                setIpData(data)
+            // ✅ ipapi.co dan foydalanish (HTTPS qo'llab-quvvatlaydi)
+            const response = await fetch(`https://ipapi.co/${ipAddress}/json/`);
+            const data = await response.json();
+
+            if (data.error !== true && data.ip) {
+                // Ma'lumotlarni formatlash
+                setIpData({
+                    query: data.ip,
+                    as: data.asn ? `AS${data.asn} ${data.org || ''}`.trim() : 'Unknown',
+                    isp: data.org || data.asn || 'Unknown',
+                    org: data.org || 'Unknown',
+                    country: data.country_name || 'Unknown',
+                    countryCode: data.country_code || 'Unknown',
+                    regionName: data.region || 'Unknown',
+                    region: data.region_code || 'Unknown',
+                    city: data.city || 'Unknown',
+                    zip: data.postal || 'Not available',
+                    timezone: data.timezone || 'Unknown',
+                    lat: data.latitude || 0,
+                    lon: data.longitude || 0
+                });
             } else {
-                throw new Error(data.message || 'Failed to fetch IP details')
+                throw new Error(data.reason || 'Failed to fetch IP details');
             }
         } catch (err) {
-            setError('Error loading IP details')
-            console.error('Error:', err)
+            setError('Error loading IP details');
+            console.error('Error:', err);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
-    }
+    };
 
     // IP manzilni decimal formatga o'tkazish
     const ipToDecimal = (ip) => {

@@ -102,13 +102,11 @@ const IpChecker = () => {
             const ipv4Result = await ipv4Response.json();
             const userIpv4 = ipv4Result.ip;
 
-            // IPv6 ni olish (alohida API)
+            // IPv6 ni olish
             let userIpv6 = null;
             try {
                 const ipv6Response = await fetch('https://api64.ipify.org?format=json');
                 const ipv6Result = await ipv6Response.json();
-
-                // Agar IPv6 manzil IPv4 dan farq qilsa, haqiqiy IPv6 deb hisoblaymiz
                 if (ipv6Result.ip !== userIpv4) {
                     userIpv6 = ipv6Result.ip;
                 }
@@ -116,14 +114,21 @@ const IpChecker = () => {
                 console.log('IPv6 not available');
             }
 
-            // IP ma'lumotlarini olish (IPv4 orqali)
-            const ipInfoResponse = await fetch(`https://ip-api.com/json/${userIpv4}`);
+            // ✅ HTTPS versiyasini ishlatish
+            const ipInfoResponse = await fetch(`https://ipapi.co/${userIpv4}/json/`);
             const ipInfoResult = await ipInfoResponse.json();
 
-            if (ipInfoResult.status === 'success') {
+            if (ipInfoResult.ip) {
                 setIpData({
-                    ...ipInfoResult,
-                    userIp: userIpv4
+                    userIp: userIpv4,
+                    isp: ipInfoResult.org,
+                    country: ipInfoResult.country_name,
+                    countryCode: ipInfoResult.country_code,
+                    city: ipInfoResult.city,
+                    regionName: ipInfoResult.region,
+                    timezone: ipInfoResult.timezone,
+                    lat: ipInfoResult.latitude,
+                    lon: ipInfoResult.longitude
                 });
                 setIpv6(userIpv6);
             } else {
