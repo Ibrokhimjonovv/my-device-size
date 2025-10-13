@@ -518,39 +518,39 @@ const Devices = () => {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    document.title = "Device Viewport Sizes & Screen Resolution List | м17";
+    document.title = "Device Viewport Sizes & Screen Resolution List | My device size";
 
     const metaTags = [
-      { name: "title", content: "Device Viewport Sizes & Screen Resolution List | м17" },
+      { name: "title", content: "Device Viewport Sizes & Screen Resolution List | My device size" },
       {
         name: "description",
         content:
-          "Explore a complete list of device viewport sizes, resolutions, screen sizes, and pixel ratios. Compare phones, tablets, and watches easily — powered by м17.",
+          "Explore a complete list of device viewport sizes, resolutions, screen sizes, and pixel ratios. Compare phones, tablets, and watches easily — powered by My device size.",
       },
       {
         name: "keywords",
         content:
-          "device viewport sizes, phone resolution list, screen size chart, device pixel ratio, density ppi, css ppi, responsive design, device comparison, м17",
+          "device viewport sizes, phone resolution list, screen size chart, device pixel ratio, density ppi, css ppi, responsive design, device comparison, My device size",
       },
-      { name: "author", content: "м17" },
+      { name: "author", content: "My device size" },
       { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://my-device-size.vercel.app/all-devices-size" },
-      { property: "og:site_name", content: "My Device Size | м17" },
+      { property: "og:site_name", content: "My Device Size | My device size" },
       { property: "og:title", content: "Device Viewport Sizes & Screen Resolution List" },
       {
         property: "og:description",
         content:
-          "Check and compare viewport, resolution, and screen sizes for phones, tablets, and other devices. Accurate device display data by м17.",
+          "Check and compare viewport, resolution, and screen sizes for phones, tablets, and other devices. Accurate device display data by My device size.",
       },
       { property: "og:image", content: "https://my-device-size.vercel.app/preview-image.png" },
       { property: "twitter:card", content: "summary_large_image" },
       { property: "twitter:url", content: "https://my-device-size.vercel.app/all-devices-size" },
-      { property: "twitter:title", content: "Device Viewport Sizes & Screen Resolution List | м17" },
+      { property: "twitter:title", content: "Device Viewport Sizes & Screen Resolution List | My device size" },
       {
         property: "twitter:description",
         content:
-          "Browse viewport and screen resolution details for all popular devices. Perfect for responsive web design and comparison — powered by м17.",
+          "Browse viewport and screen resolution details for all popular devices. Perfect for responsive web design and comparison — powered by My device size.",
       },
       { property: "twitter:image", content: "https://my-device-size.vercel.app/preview-image.png" },
     ];
