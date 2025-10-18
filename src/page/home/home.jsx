@@ -6,24 +6,24 @@ import CompareDevices from "../../components/compare-devices/compare-devices";
 
 const Home = () => {
   useEffect(() => {
-    document.title = "My Device Size — Screen Resolution & Viewport Analyzer | My device size";
+    document.title = "My Device Size in cm, px, rem, em - Screen Resolution in cm, px, rem, em & Viewport Analyzer in cm, px, rem, em | My device size in cm, px, rem, em";
 
     const metaTags = [
-      { name: "title", content: "My Device Size — Screen Resolution & Viewport Analyzer | My device size" },
-      { name: "description", content: "Discover your device screen size, resolution, pixel ratio, and viewport instantly. Analyze, compare, and understand your device display metrics with My device size." },
+      { name: "title", content: "My Device Size in cm, px, rem, em - Screen Resolution in cm, px, rem, em & Viewport Analyzer in cm, px, rem, em | My device size in cm, px, rem, em" },
+      { name: "description", content: "Check my monitor size online, What is my monitor size in pixels, How to check size of monitor in Windows, My phone screen size in inches, What is the screen size of my laptop in pixels, Check my laptop screen size online, how to check viewport size in chrome, viewport calculator, Discover your device screen size, resolution, pixel ratio, and viewport instantly. Analyze, compare, and understand your device display metrics with My device size." },
       { name: "keywords", content: "device size, screen resolution, viewport analyzer, DPR, pixel ratio, screen metrics, user agent, compare devices, web tools, My device size" },
       { name: "author", content: "My device size" },
       { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://my-device-size.vercel.app/" },
       { property: "og:site_name", content: "My Device Size | My device size" },
-      { property: "og:title", content: "My Device Size — Check Your Screen Resolution & Viewport Instantly" },
+      { property: "og:title", content: "My Device Size - Check Your Screen Resolution & Viewport Instantly" },
       { property: "og:description", content: "Instantly view your device resolution, DPR, and viewport size. Compare devices and analyze screen data effortlessly with My device size." },
       { property: "og:image", content: "https://my-device-size.vercel.app/preview-image.png" },
       { property: "twitter:card", content: "summary_large_image" },
       { property: "twitter:url", content: "https://my-device-size.vercel.app/" },
-      { property: "twitter:title", content: "My Device Size — Screen Resolution & Viewport Analyzer | My device size" },
-      { property: "twitter:description", content: "Analyze your device display details like screen size, DPR, and viewport instantly. Compare devices online — powered by My device size." },
+      { property: "twitter:title", content: "My Device Size - Screen Resolution & Viewport Analyzer | My device size" },
+      { property: "twitter:description", content: "Analyze your device display details like screen size, DPR, and viewport instantly. Compare devices online - powered by My device size." },
       { property: "twitter:image", content: "https://my-device-size.vercel.app/preview-image.png" },
     ];
 

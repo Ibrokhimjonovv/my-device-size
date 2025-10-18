@@ -36,7 +36,7 @@ const Hide = () => {
         };
 
         // ✅ SEO meta tags
-        createMetaTag("description", "Learn how to hide your IP address and stay anonymous online using VPNs like NordVPN, Surfshark, or ExpressVPN. Protect your privacy and browse securely.");
+        createMetaTag("description", "How to hide my ip address, hide my ip, hide my ip address, Learn how to hide your IP address and stay anonymous online using VPNs like NordVPN, Surfshark, or ExpressVPN. Protect your privacy and browse securely.");
         createMetaTag("keywords", "hide IP, VPN, anonymous browsing, internet privacy, change IP address, hide location, online security");
         createMetaTag("author", "What's my ip address");
         createMetaTag("robots", "index, follow");

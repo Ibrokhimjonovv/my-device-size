@@ -19,7 +19,7 @@ const IpChecker = () => {
     const [ipv6, setIpv6] = useState(null);
 
     useEffect(() => {
-        document.title = "My IP Address Checker - Find Your Public IP Instantly | What's my ip address";
+        document.title = "My IP Address Checker - Find Your Public IP Instantly - See Your Public Address - IPv4 & IPv6 | What's my ip address, What Is My IP Address - See Your Public Address - IPv4 & IPv6";
 
         // Eski meta teglarni o‘chirish
         const removeOldTags = () => {
@@ -50,7 +50,7 @@ const IpChecker = () => {
         // ✅ SEO meta teglar
         createMeta(
             "description",
-            "Check your public IP address (IPv4 and IPv6) instantly. View your ISP, country, city, timezone, and IP location on the map. Simple and fast IP lookup."
+            "Is 192.168 my IP address?, How do I find my IP address?, What is 169.254.169.254 IP address used for?, Is 192.168 a real IP?, IP address, IP address search, мой ip-адрес, IP address location, My IP info, Ip address nima, IPinfo, 2ip, What's my ip address, what is my ip address, Check your ip address, check your private ip, check your ip address, check my private ip, check my ip address, what is my ip location, Check your public IP address (IPv4 and IPv6) instantly. View your ISP, country, city, timezone, and IP location on the map. Simple and fast IP lookup."
         );
         createMeta(
             "keywords",
