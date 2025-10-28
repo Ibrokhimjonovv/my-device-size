@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./devices.scss";
+import GoogleAd1 from "../../components/google-ads/square-ad-1";
+import GoogleLongAd from "../../components/google-ads/long-ad-1";
 
 const devices = [
     {
@@ -610,7 +612,12 @@ const Devices = () => {
             Screen Sizes and Devices Resolution:
           </p>
         </div>
-        <div className="devices-ad"></div>
+        <div className="devices-ad">
+          <GoogleAd1 />
+        </div>
+      </div>
+      <div className="long-ad">
+        <GoogleLongAd />
       </div>
       <label htmlFor="ser">Find any device viewport size</label>
       <div className="search">
