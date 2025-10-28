@@ -132,7 +132,10 @@
         position: relative;
         height: 200px;
         width: 100%;
-        display: none;
+        
+        &.measurement-ad-2 {
+          display: none;
+        }
       }
 
       table {
