@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const GoogleAdHorizontal2 = () => {
+const GoogleAdVertical2 = () => {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -14,11 +14,11 @@ const GoogleAdHorizontal2 = () => {
       className="adsbygoogle"
       style={{ display: "block" }}
       data-ad-client="ca-pub-1980545331504061"
-      data-ad-slot="3292775145"
+      data-ad-slot="9129950401"
       data-ad-format="auto"
       data-full-width-responsive="true"
     ></ins>
   );
 };
 
-export default GoogleAdHorizontal2;
+export default GoogleAdVertical2;

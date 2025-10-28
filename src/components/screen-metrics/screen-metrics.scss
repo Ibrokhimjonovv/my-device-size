@@ -95,18 +95,20 @@
 }
 
 @media screen and (max-width: 500px) {
+  .home-screen-ad {
+    margin: 0 15px 30px;
+  }
   #screen-metrics {
-  padding: 40px 15px;
+    padding: 40px 15px;
 
-  h2 {
-    font-size: 28px;
+    h2 {
+      font-size: 28px;
+    }
+
+    .containers {
+      margin-top: 30px;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+    }
   }
-
-  .containers {
-    margin-top: 30px;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-  }
-}
-
 }
