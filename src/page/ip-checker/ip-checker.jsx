@@ -290,7 +290,6 @@ const IpChecker = () => {
 
                 <div className="square-ad">
                     <GoogleAdIp3 />
-                    <GoogleAdIp4 />
                 </div>
             </div>
         </div>

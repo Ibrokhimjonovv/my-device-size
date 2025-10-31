@@ -267,7 +267,6 @@ const IpDetail = () => {
             </div>
             <div className="square-ad">
                     <GoogleAdIp3 />
-                    <GoogleAdIp4 />
                 </div>
         </div>
     )
