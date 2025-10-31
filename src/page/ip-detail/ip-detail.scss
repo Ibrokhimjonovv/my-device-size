@@ -1,6 +1,10 @@
 #ip-detail {
   background-color: #1f4973;
   
+  .square-ad {
+    display: flex;
+    justify-content: center;
+  }
 
   .ip-infos, .square-ad {
     max-width: 1366px;
