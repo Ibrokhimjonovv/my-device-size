@@ -4,6 +4,8 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import "./ip-detail.scss"
+import GoogleAdIp3 from '../../components/google-ads/ipadsquare1'
+import GoogleAdIp4 from '../../components/google-ads/ipadsquare2'
 
 // Leaflet icons fix
 delete L.Icon.Default.prototype._getIconUrl;
@@ -263,6 +265,10 @@ const IpDetail = () => {
                     Latitude and Longitude are often near the center of population. These values are not precise enough to be used to identify a specific address, individual, or for legal purposes. IP data from IP2Location.
                 </p>
             </div>
+            <div className="square-ad">
+                    <GoogleAdIp3 />
+                    <GoogleAdIp4 />
+                </div>
         </div>
     )
 }
