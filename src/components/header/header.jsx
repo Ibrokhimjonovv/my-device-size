@@ -72,7 +72,7 @@ const Header = () => {
 
             <div className={`my-menu ${show ? "active" : ""}`}>
                 <nav>
-                    <Link to="/" onClick={handleShow}>Homee</Link>
+                    <Link to="/" onClick={handleShow}>Home</Link>
                     <Link to="/units-of-measurement" onClick={handleShow}>Units Of Measurement</Link>
                     <Link to="/all-devices-size" onClick={handleShow}>All Devices Size</Link>
                     <Link to="/ip-address-checker" onClick={handleShow}>What's my ip addess</Link>
