@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./units-of-measurements.scss";
-import GoogleAdHorizontal2 from "../../components/google-ads/multiplex";
-import GoogleAdVertical1 from "../../components/google-ads/advertical1";
-import GoogleAdVertical2 from "../../components/google-ads/advertical2";
 
 const sizes = [
   { id: 1, from: "1 px", to: "1 pixel (base unit)", equal: true },
@@ -174,7 +171,6 @@ const UnitsOfMeasurement = () => {
       <h2 id="tt">Units of Measurement</h2>
       <div className="table">
         <div className="measurement-ad measurement-ad-1">
-          <GoogleAdVertical1 />
         </div>
         <table>
           <thead>
@@ -197,11 +193,9 @@ const UnitsOfMeasurement = () => {
           </tbody>
         </table>
         <div className="measurement-ad measurement-ad-2">
-          <GoogleAdVertical2 />
         </div>
       </div>
       <div className="multiplex">
-        <GoogleAdHorizontal2 />
       </div>
       <h2 id="top">Measurement converter</h2>
       <UnitConverter />

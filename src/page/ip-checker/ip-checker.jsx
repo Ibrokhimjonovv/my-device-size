@@ -3,10 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import "./ip-checker.scss";
-import GoogleAdIp1 from '../../components/google-ads/ipad1';
-import GoogleAdIp2 from '../../components/google-ads/ipad2';
-import GoogleAdIp3 from '../../components/google-ads/ipadsquare1';
-import GoogleAdIp4 from '../../components/google-ads/ipadsquare2';
 
 // Leaflet icons fix
 delete L.Icon.Default.prototype._getIconUrl;
@@ -153,7 +149,6 @@ const IpChecker = () => {
     return (
         <div id='ip-checker'>
             <div className="ad">
-                <GoogleAdIp1 />
             </div>
             {loading && (
                 <div className="ip-check-container">
@@ -231,7 +226,6 @@ const IpChecker = () => {
             )}
 
             <div className="ad">
-                <GoogleAdIp2 />
             </div>
 
             <div className="more-text-informations">
@@ -289,7 +283,6 @@ const IpChecker = () => {
                 </ul>
 
                 <div className="square-ad">
-                    <GoogleAdIp3 />
                 </div>
             </div>
         </div>

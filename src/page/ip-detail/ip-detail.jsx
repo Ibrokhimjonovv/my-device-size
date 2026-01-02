@@ -4,8 +4,6 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import "./ip-detail.scss"
-import GoogleAdIp3 from '../../components/google-ads/ipadsquare1'
-import GoogleAdIp4 from '../../components/google-ads/ipadsquare2'
 
 // Leaflet icons fix
 delete L.Icon.Default.prototype._getIconUrl;
@@ -266,7 +264,6 @@ const IpDetail = () => {
                 </p>
             </div>
             <div className="square-ad">
-                    <GoogleAdIp3 />
                 </div>
         </div>
     )

@@ -35,7 +35,7 @@ const CompareDevices = () => {
         Mobile devices, in Responsive Web Design, relate to a core value which is the value of CSS width or ("device-width"), in CSS Device Independant Pixels, which depends both of the browser and user zoom settings.
       </p>
       <Link to="/all-devices-size" ref={linkRef}>
-        Find any device viewport size on Next Page >
+        Find any device viewport size on Next Page {">"}
       </Link>
     </div>
   );
