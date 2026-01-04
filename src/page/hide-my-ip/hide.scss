@@ -4,6 +4,8 @@
     .iii {
         max-width: 1366px;
         margin: 0 auto;
+        display: flex;
+        gap: 10px;
 
         .datas {
             background-color: #fff;
@@ -80,6 +82,10 @@
             }
 
         }
+
+        .hide-ad {
+            width: 30%;
+        }
     }
 }
 
@@ -89,6 +95,8 @@
         padding: 10px;
 
         .iii {
+            flex-direction: column;
+            
             .datas {
                 width: 100%;
                 padding: 10px;
