@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import "./ip-checker.scss";
+import GoogleAdIpHorizontal1 from '../../components/google-ads/WhatsMyIpAddress';
 
 // Leaflet icons fix
 delete L.Icon.Default.prototype._getIconUrl;
@@ -149,6 +150,7 @@ const IpChecker = () => {
     return (
         <div id='ip-checker'>
             <div className="ad">
+                <GoogleAdIpHorizontal1 />
             </div>
             {loading && (
                 <div className="ip-check-container">

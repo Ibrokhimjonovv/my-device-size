@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default function HomeAd1() {
+export default function AllDevicesSquareAd1() {
   useEffect(() => {
     try {
       if (window.adsbygoogle) {
@@ -13,12 +13,13 @@ export default function HomeAd1() {
 
   return (
     <>
-      {/* Home page horizontal ad 1 */}
+
+      {/* All devices square ad 1 */}
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client="ca-pub-1980545331504061"
-        data-ad-slot="4322748109"
+        data-ad-slot="6185320659"
         data-ad-format="auto"
         data-full-width-responsive="true"
       ></ins>

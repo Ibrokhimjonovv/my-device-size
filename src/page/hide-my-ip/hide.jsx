@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import "./hide.scss";
+import GoogleAdHideMyIpVertical1 from '../../components/google-ads/HideMyIpAd';
 
 const Hide = () => {
 
@@ -108,6 +109,9 @@ const Hide = () => {
                     <p className="ooo">
                         There are many more advantages to using a personal VPN service over a proxy such as high-speed bandwidth, usability, a secure connection, private access to blocked sites, and the ability to choose the country and city where you appear to be.
                     </p>
+                </div>
+                <div className="hide-ad">
+                    <GoogleAdHideMyIpVertical1 />
                 </div>
             </div>
         </div>
